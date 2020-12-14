@@ -64,7 +64,7 @@ function isTwo(number) {
     }
 }
 isTwo(random);
-console.log(random);
+console.log(random());
 
 /**
  * TODO:
@@ -81,6 +81,8 @@ console.log(random);
 function calculateTip(tipPercentage, billTotal) {
     return tipPercentage * billTotal;
 }
+
+calculateTip(20, 100);
 
     /**
      * TODO:
