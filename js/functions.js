@@ -10,7 +10,7 @@
  */
 
 function sayHello(name) {
-    console.log("Hello, " + name);
+    return ("Hello, " + name + "!");
 }
 
 /**
@@ -21,9 +21,9 @@ function sayHello(name) {
  * console.log 'helloMessage' to check your work
  */
 
-sayHello("Michael");
+var helloMessage = sayHello("Michael");
 
-var helloMessage = sayHello;
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -38,6 +38,7 @@ sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
+
 var random = Math.floor((Math.random() * 3) + 1);
 
 /**
@@ -59,12 +60,15 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo(number) {
-    if (number === 2) {
-        return true;
-    }
+    return number === 2;
 }
-isTwo(random);
-console.log(random());
+
+//test case
+// console.log(isTwo(1), false);
+// console.log(isTwo(2), true);
+// console.log(isTwo(3), false);
+
+console.log(isTwo(random));
 
 /**
  * TODO:
@@ -79,10 +83,12 @@ console.log(random());
  */
 
 function calculateTip(tipPercentage, billTotal) {
-    return tipPercentage * billTotal;
+    return (tipPercentage) * billTotal;
 }
 
-calculateTip(20, 100);
+console.log(calculateTip(0.2, 20));
+console.log(calculateTip(0.25, 25.5));
+console.log(calculateTip(0.15, 33.42));
 
     /**
      * TODO:
@@ -92,10 +98,10 @@ calculateTip(20, 100);
      */
 
 
-    var tipPercentage = prompt("Enter your tip:", "0") / 100;
+    var tipPercentage = prompt("Enter your tip percentage:", "0") / 100;
     var billTotal = prompt("Enter the bill total:", "0");
 
-alert("Your tip amount is: " + calculateTip());
+alert("Your tip amount is: " + calculateTip(tipPercentage, billTotal));
 
 /**
  * TODO:
@@ -106,17 +112,17 @@ alert("Your tip amount is: " + calculateTip());
  *
  * Example:
  * > var originalPrice = 100;
- * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > var discountPercent = .2; // 20%
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-var priceBeforeDiscount;
+var originalPrice;
 var discountPercentage = Math.floor(Math.random());
 
-function applyDiscount(priceBeforeDiscount, discountPercentage) {
-    return priceBeforeDiscount * discountPercentage;
+function applyDiscount(originalPrice, discountPercentage) {
+    return originalPrice - (originalPrice * discountPercentage);
 }
 
-console.log("Your discount is: " + applyDiscount());
+console.log("Your discount is: " + applyDiscount(45.99, 0.12));
