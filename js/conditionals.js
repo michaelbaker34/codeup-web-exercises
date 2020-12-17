@@ -109,13 +109,13 @@ function calculateTotal(luckyNumber, totalAmount) {
         case 5:
             return discountPrice = totalAmount - totalAmount;
         case 4:
-            return discountPrice = totalAmount / 2;
+            return discountPrice = totalAmount * .5;
         case 3:
-            return discountPrice = totalAmount * 0.35;
+            return discountPrice = totalAmount * .35;
         case 2:
-            return discountPrice = totalAmount *  0.25;
+            return discountPrice = totalAmount * .25;
         case 1:
-            return discountPrice = totalAmount * 0.1;
+            return discountPrice = totalAmount * .1;
                 default:
             return discountPrice = totalAmount;
     }
