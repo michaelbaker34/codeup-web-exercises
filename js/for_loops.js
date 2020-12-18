@@ -22,7 +22,9 @@ function randomOddEven() {
 
 // 4
 function numberTriangle() {
-
+    for (var i = 1; i <= 9; i += 1) {
+        console.log(String(i).repeat(i));
+    }
 }
 
 // 5
