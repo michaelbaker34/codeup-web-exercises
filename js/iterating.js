@@ -1,3 +1,4 @@
+(function () {
     "use strict";
 
     /**
@@ -76,3 +77,4 @@
     function lastElement(array) {
         console.log("Last item in array [" + array + "] is " + lastIndex);
     }
+}) ();
