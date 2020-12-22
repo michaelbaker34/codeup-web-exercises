@@ -1,4 +1,3 @@
-(function () {
     "use strict";
 
     /**
@@ -15,7 +14,7 @@
      * array.
      */
 
-    console.log(names.length, 4);
+    console.log("Number of elements in names array are " + names.length, 4);
 
     /**
      * TODO:
@@ -34,9 +33,9 @@
      * array.
      */
 
-    for (var i = 0; i < names.length; i++) {
-        console.log("Name " + i + " is " + names[i]);
-    }
+    // for (var i = 0; i < names.length; i++) {
+    //     console.log("Name " + i + " is " + names[i]);
+    // }
 
     /**
      * TODO:
@@ -61,4 +60,19 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-})();
+    var numbers = [1, 2, 3, 4, 5];
+    var firstIndex = numbers[0];
+    var secondIndex = numbers[1];
+    var lastIndex = numbers[numbers.length - 1];
+
+    function firstElement(array) {
+        console.log("First item in array [" + array + "] is " + firstIndex);
+    }
+
+    function secondElement(array) {
+        console.log("Second item in array [" + array + "] is " + secondIndex);
+    }
+
+    function lastElement(array) {
+        console.log("Last item in array [" + array + "] is " + lastIndex);
+    }
