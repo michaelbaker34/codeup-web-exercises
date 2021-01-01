@@ -55,10 +55,11 @@
     var discount = .12;
 
     shoppers.forEach(function (shopper) {
+        var total = shopper.amount * discount;
         console.log("Congratulations " + shopper.name
                 + ", you get a " + discount
-                + "% discount. Your total is: $" + shopper.amount * discount);
-    })
+                + "% discount. Your total is: $" + total.toFixed(2));
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -72,6 +73,44 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {title:"The Hitchhiker's Guide to the Galaxy",
+            author: {
+                firstName:"Douglas",
+                lastName:"Adams"
+            }
+        },
+        {title:"The Silmarillion",
+            author: {
+                firstName:"J.R.R.",
+                lastName:"Tolkien"
+            }
+        },
+        {title:"1984",
+            author: {
+                firstName:"George",
+                lastName:"Orwell"
+            }
+        },
+        {title:"Shogun",
+            author: {
+                firstName:"James",
+                lastName:"Clavell"
+            }
+        },
+        {title:"Sapiens",
+            author: {
+                firstName:"Yuval",
+                lastName:"Harari"
+            }
+        },
+    ];
+
+    // books test
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName);
+    // console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -98,6 +137,12 @@
      *      ...
      */
 
+        books.forEach(function (book, index) {
+            console.log("Book # " + index
+            + "\nTitle: " + book.title
+            + "\nAuthor: " + book.author.firstName
+            + " " + book.author.lastName);
+        });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
