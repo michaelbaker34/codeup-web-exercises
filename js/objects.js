@@ -146,7 +146,7 @@
             + "\nAuthor: " + book.author.firstName
             + " " + book.author.lastName);
         });
-
+})();
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -158,4 +158,6 @@
      *   `showBookInfo` function.
      */
 
-})();
+    function createBook(title, author) {
+
+    }
