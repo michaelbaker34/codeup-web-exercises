@@ -32,6 +32,7 @@
      */
 
     console.log(person.sayHello);
+    console.log("==============================");
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -60,6 +61,7 @@
                 + ", you get a " + discount
                 + "% discount. Your total is: $" + total.toFixed(2));
     });
+    console.log("==============================");
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -138,11 +140,13 @@
      */
 
         books.forEach(function (book, index) {
-            console.log("Book # " + index
+            var bookNumber = index + 1;
+            console.log("Book # " + bookNumber
             + "\nTitle: " + book.title
             + "\nAuthor: " + book.author.firstName
             + " " + book.author.lastName);
         });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
