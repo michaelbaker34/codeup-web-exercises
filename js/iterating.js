@@ -67,14 +67,20 @@
     var lastIndex = numbers[numbers.length - 1];
 
     function firstElement(array) {
-        console.log("First item in array [" + array + "] is " + firstIndex);
+        return firstIndex;
     }
 
     function secondElement(array) {
-        console.log("Second item in array [" + array + "] is " + secondIndex);
+        return secondIndex;
     }
 
     function lastElement(array) {
-        console.log("Last item in array [" + array + "] is " + lastIndex);
+        return lastIndex;
     }
+
+    console.log(firstElement(numbers));
+    console.log(secondElement(numbers));
+    console.log(lastElement(numbers));
+
+
 }) ();
