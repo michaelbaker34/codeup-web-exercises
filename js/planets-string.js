@@ -26,4 +26,5 @@
 
     var planetsBreak = planetsArray.join("</br>");
     document.write(planetsBreak);
+
 }) ();
