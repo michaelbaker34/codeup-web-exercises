@@ -197,7 +197,8 @@
 
     function showBookInfo(book) {
         return "Title: " + book.title + "\n" +
-                "Author: " + book.author.firstName + " " + book.author.lastName;
+                "Author: " + book.author.firstName + " " + book.author.lastName + "\n" +
+                "---";
     }
 
     books.push(createBook("The Wheel of Time", "Robert", "Jordan"))
@@ -206,4 +207,19 @@
         var bookNumber = bookIndex + 1;
         console.log("Book " + bookNumber + "\n" + showBookInfo(book));
     })
+
+    // .split createBook function
+    // function createBook(title, author) {
+    //     var nameArr = author.split(" ");
+    //     var firstName = nameArr[0];
+    //     var lastName = nameArr[1];
+    //     return {
+    //         title: title,
+    //         author: {
+    //             firstName: firstName,
+    //             lastName: lastName
+    //         }
+    //     }
+    // }
+
 })();
