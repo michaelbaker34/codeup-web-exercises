@@ -12,7 +12,7 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    let person = {
+    var person = {
         firstName: "Michael",
         lastName: "Baker",
         sayHello: "Hello from Michael Baker"
@@ -76,38 +76,41 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {title:"The Hitchhiker's Guide to the Galaxy",
-            author: {
-                firstName:"Douglas",
-                lastName:"Adams"
-            }
-        },
-        {title:"The Silmarillion",
-            author: {
-                firstName:"J.R.R.",
-                lastName:"Tolkien"
-            }
-        },
-        {title:"1984",
-            author: {
-                firstName:"George",
-                lastName:"Orwell"
-            }
-        },
-        {title:"Shogun",
-            author: {
-                firstName:"James",
-                lastName:"Clavell"
-            }
-        },
-        {title:"Sapiens",
-            author: {
-                firstName:"Yuval",
-                lastName:"Harari"
-            }
-        },
-    ];
+    var books = [createBook("Silmarillion", "J.R.R.", "Tolkien"),
+        createBook("Dune", "Frank", "Herbert")];
+
+    //     old books array[
+    //     {title:"The Hitchhiker's Guide to the Galaxy",
+    //         author: {
+    //             firstName:"Douglas",
+    //             lastName:"Adams"
+    //         }
+    //     },
+    //     {title:"The Silmarillion",
+    //         author: {
+    //             firstName:"J.R.R.",
+    //             lastName:"Tolkien"
+    //         }
+    //     },
+    //     {title:"1984",
+    //         author: {
+    //             firstName:"George",
+    //             lastName:"Orwell"
+    //         }
+    //     },
+    //     {title:"Shogun",
+    //         author: {
+    //             firstName:"James",
+    //             lastName:"Clavell"
+    //         }
+    //     },
+    //     {title:"Sapiens",
+    //         author: {
+    //             firstName:"Yuval",
+    //             lastName:"Harari"
+    //         }
+    //     }
+    // ];
 
     // books test
     // console.log(books[0].title);
@@ -139,15 +142,17 @@
      *      ...
      */
 
-        books.forEach(function (book, index) {
-            var bookNumber = index + 1;
-            console.log("Book # " + bookNumber
-            + "\nTitle: " + book.title
-            + "\nAuthor: " + book.author.firstName
-            + " " + book.author.lastName);
-        });
-})();
-    /**
+    // Old Books forEach
+        // books.forEach(function (book, index) {
+        //     var bookNumber = index + 1;
+        //     console.log("Book # " + bookNumber
+        //     + "\nTitle: " + book.title
+        //     + "\nAuthor: " + book.author.firstName
+        //     + " " + book.author.lastName);
+        // });
+
+
+/**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
@@ -158,6 +163,25 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, author) {
-
+    function createBook(title, authorFirstName, authorLastName) {
+        var newBook = {
+            title: title,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        };
+        return newBook;
     }
+
+    function showBookInfo(book) {
+        return "Title: " + book.title
+        + "\nAuthor: " + book.author.firstName
+        + " " + book.author.lastName;
+    }
+
+    books.forEach(function (book) {
+        console.log(showBookInfo(book));
+    })
+
+})();
