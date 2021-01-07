@@ -169,7 +169,8 @@
         //     console.log("Book # " + bookNumber
         //     + "\nTitle: " + book.title
         //     + "\nAuthor: " + book.author.firstName
-        //     + " " + book.author.lastName);
+        //     + " " + book.author.lastName
+        //     + "---");
         // });
 
 
@@ -201,8 +202,8 @@
 
     books.push(createBook("The Wheel of Time", "Robert", "Jordan"))
 
-    books.forEach(function (book,bookNumber) {
-        var bookIndex = bookNumber + 1;
-        console.log("Book " + bookIndex + "\n" + showBookInfo(book));
+    books.forEach(function (book,bookIndex) {
+        var bookNumber = bookIndex + 1;
+        console.log("Book " + bookNumber + "\n" + showBookInfo(book));
     })
 })();
