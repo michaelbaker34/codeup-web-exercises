@@ -195,13 +195,14 @@
     }
 
     function showBookInfo(book) {
-        return "Title: " + book.title
-        + "\nAuthor: " + book.author.firstName
-        + " " + book.author.lastName;
+        return "Title: " + book.title + "\n" +
+                "Author: " + book.author.firstName + " " + book.author.lastName;
     }
 
-    books.forEach(function (book) {
-        console.log(showBookInfo(book));
-    })
+    books.push(createBook("The Wheel of Time", "Robert", "Jordan"))
 
+    books.forEach(function (book,bookNumber) {
+        var bookIndex = bookNumber + 1;
+        console.log("Book " + bookIndex + "\n" + showBookInfo(book));
+    })
 })();
