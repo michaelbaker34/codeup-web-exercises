@@ -58,21 +58,30 @@
         {name: 'George', amount: 320}
     ];
 
+    var discountAmountThreshold = 200;
+    var discountPercentage = .12;
+
+    function calculateDiscount (amount, discountAmountThreshold, discountPercentage) {
+        return (amount > discountAmountThreshold) ? amount * discountPercentage : 0;
+    }
+
+    function displayCurrency (amount) {
+        return "$" + amount.toFixed(2);
+    }
+
     shoppers.forEach(function (shopper) {
-        var name = shopper.name;
-        var discount = .12;
-        var beforeDiscount = shopper.amount;
-        if (shopper.amount > 200) {
-            discountApplied = discount * beforeDiscount;
-        } else {
-            discountApplied = 0;
-        }
-        var discountApplied;
-        var amountTotal = beforeDiscount - discountApplied;
-        var message = name + ", you get a " + discount
-                + "% discount. Your total is: $" + amountTotal.toFixed(2);
+        var shopperName = shopper.name;
+        var amountBeforeDiscount = shopper.amount;
+        var amountOff = calculateDiscount(amountBeforeDiscount, discountAmountThreshold, discountPercentage);
+        var totalCost = amountBeforeDiscount - amountOff;
+        var message = shopperName
+            + " purchased " + displayCurrency(amountBeforeDiscount)
+            + " and is getting " + displayCurrency(amountOff)
+            + " off the purchase price, and is paying " + displayCurrency(totalCost);
+
     console.log(message);
     });
+
     console.log("==============================");
 
     /** TODO:
@@ -176,14 +185,13 @@
      */
 
     function createBook(title, authorFirstName, authorLastName) {
-        var newBook = {
+        return {
             title: title,
             author: {
                 firstName: authorFirstName,
                 lastName: authorLastName
             }
-        };
-        return newBook;
+        }
     }
 
     function showBookInfo(book) {
