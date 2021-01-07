@@ -62,16 +62,15 @@
         var name = shopper.name;
         var discount = .12;
         var beforeDiscount = shopper.amount;
-        var discountApplied;
-        var amountTotal = beforeDiscount - discountApplied
-        var message = "Congratulations " + name
-                + ", you get a " + discount
-                + "% discount. Your total is: $" + amountTotal.toFixed(2);
         if (shopper.amount > 200) {
             discountApplied = discount * beforeDiscount;
         } else {
             discountApplied = 0;
         }
+        var discountApplied;
+        var amountTotal = beforeDiscount - discountApplied;
+        var message = name + ", you get a " + discount
+                + "% discount. Your total is: $" + amountTotal.toFixed(2);
     console.log(message);
     });
     console.log("==============================");
