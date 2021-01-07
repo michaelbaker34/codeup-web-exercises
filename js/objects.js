@@ -57,13 +57,22 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    var discount = .12;
 
     shoppers.forEach(function (shopper) {
-        var total = shopper.amount * discount;
-        console.log("Congratulations " + shopper.name
+        var name = shopper.name;
+        var discount = .12;
+        var beforeDiscount = shopper.amount;
+        var discountApplied;
+        var amountTotal = beforeDiscount - discountApplied
+        var message = "Congratulations " + name
                 + ", you get a " + discount
-                + "% discount. Your total is: $" + total.toFixed(2));
+                + "% discount. Your total is: $" + amountTotal.toFixed(2);
+        if (shopper.amount > 200) {
+            discountApplied = discount * beforeDiscount;
+        } else {
+            discountApplied = 0;
+        }
+    console.log(message);
     });
     console.log("==============================");
 
