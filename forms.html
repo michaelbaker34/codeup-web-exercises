@@ -6,29 +6,46 @@
 </head>
 <body>
 
-<form method="post" action="https://request-inspector.glitch.me/"></form>
+    <div id="content">
+        <form method="post" action="https://request-inspector.glitch.me/" id="form1"></form>
 
-    <label for="email">Enter E-mail: </label>
-    <input id="email" name="email" type="text">
+        <label for="email">Enter E-mail: </label>
+        <input id="email" name="email" type="text">
 
-    <br>
+        <br>
 
-    <label for="password">Enter password: </label>
-    <input id="password" name="password" type="password">
+        <label for="password">Enter password: </label>
+        <input id="password" name="password" type="password">
 
-    <br>
+        <br>
 
-    <label for="bio"></label>
-    <textarea name="bio" id="bio" cols="30" rows="10">Briefly describe yourself</textarea>
+        <label for="bio"></label>
+        <textarea name="bio" id="bio" cols="30" rows="10">Briefly describe yourself</textarea>
 
-    <br>
+        <br>
 
-    <label for="billboard">Billboard</label>
-    <input id="billboard" name="billboard" type="radio" value="billboard">
-    <label for="radio">Radio Advertisement</label>
-    <input id="radio" name="radio" type="radio" value="radio">
-    <label for="other"></label>
-    <input id="other" name="other" type="radio" value="other">
+        <h2>How did you hear about us?</h2>
+        <label for="billboard">Billboard</label>
+        <input id="billboard" name="discovered" type="radio" value="billboard">
+        <label for="radio">Radio Advertisement</label>
+        <input id="radio" name="discovered" type="radio" value="radio">
+        <label for="other">Other</label>
+        <input id="other" name="discovered" type="radio" value="other">
+
+        <br>
+
+        <label for="browser">What web browser are you using?</label>
+        <select name="browser" id="browser">
+            <option value="firefox">Mozilla Firefox</option>
+            <option value="chrome">Google Chrome</option>
+            <option value="edge">Microsoft Edge</option>
+        </select>
+
+        <br>
+
+        <label for="submit"></label>
+        <button type="submit" form="form1" value="submit" id="submit">Done</button>
+    </div>
 
 </body>
 </html>
