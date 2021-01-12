@@ -1,6 +1,58 @@
 
 .fancy-header {
-    color: purple;
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.header {
+    color: darkred;
     text-decoration: underline;
 }
 
+body {
+    background-color: lightgrey;
+    font-family: Courier New;
+}
+
+.ulCustom {
+    list-style: none;
+}
+
+.tableTitle {
+    color: black;
+    text-decoration: underline;
+}
+
+.tableProduct {
+    border: 1px solid black;
+}
+
+.tableProduct td {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    background-image: url("../img/karolina-grabowska.jpg");
+}
+
+.tableProduct th {
+    font-family: Arial;
+
+}
+
+a:link {
+    color:crimson;
+}
+
+a:visited {
+    color: lightcoral;
+}
+
+a:hover {
+    color: darkred;
+}
+
+a:active {
+    color: blue;
+}
