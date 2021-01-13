@@ -7,33 +7,53 @@ body, html {
 }
 
 .bg-info {
-    color:rgba(0, 0, 255, 0.5);
+    width: 90%;
 }
 
 .text-info {
-    color: rgb(0, 0, 255);
+    height: 20px;
+    margin: 10px auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: rgb(0, 0, 150);
+    background-color:rgba(0, 0, 255, 0.20);
 }
 
 .bg-success {
-    color: rgba(0, 255, 0, 0.5);
+    width: 90%;
 }
 
 .text-success {
-    color: rgb(0, 255, 0);
+    height: 20px;
+    margin: 10px auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: rgb(0, 120, 0);
+    background-color: rgba(0, 255, 0, 0.2);
 }
 
 .bg-warning {
-    color: rgba(255, 255, 0, 0.5);
+    width: 90%;
 }
 
 .text-warning {
-    color: rgb(255, 255, 0);
+    height: 20px;
+    margin: 10px auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: rgb(120, 150, 0);
+    background-color: rgba(255, 255, 0, 0.2);
 }
 
 .bg-error {
-    color: rgba(255, 0, 0, 0.5);
+    width: 90%;
 }
 
 .text-error {
-    color: rgb(255, 0, 0);
+    height: 20px;
+    margin: 10px auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: rgb(120, 0, 0);
+    background-color: rgba(255, 0, 0, 0.2);
 }
