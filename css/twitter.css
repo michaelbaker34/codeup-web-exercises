@@ -54,7 +54,7 @@
 
     .profile-image {
         position: absolute;
-        top: 250px;
+        top: 240px;
     }
 
     .profile-form {
@@ -71,9 +71,19 @@
         padding: 2em 0;
     }
 
-    .profile-details {
+    .profile-details,
+    .who-to-follow {
         width: 25%;
+    }
+
+    .profile-details,
+    .who-to-follow,
+    .timeline {
         margin: 0 .5em;
+    }
+
+    .who-to-follow h3 {
+        flex-basis: 100%;
     }
 
     .profile-entry {
@@ -82,19 +92,12 @@
 
     .timeline {
         width: 50%;
-        margin: 0 .5em;
-    }
-
-    .who-to-follow h3 {
-        width: 25%;
-        margin: 0 .5em;
-        flex-basis: 100%;
     }
 
     .media {
         width: 100%;
         background-color: var(--light-bg);
-        border: 1px var(--separator-color);
+        border-bottom: solid 1px var(--separator-color);
         padding: .5em;
         display: flex;
         align-items: flex-start;
