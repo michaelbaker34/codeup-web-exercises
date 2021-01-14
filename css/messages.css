@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
-.bg-info {
+.bg-main {
     width: 90%;
 }
 
@@ -19,9 +19,9 @@ body, html {
     background-color:rgba(0, 0, 255, 0.20);
 }
 
-.bg-success {
+/* .bg-success {
     width: 90%;
-}
+} */
 
 .text-success {
     height: 20px;
@@ -32,9 +32,9 @@ body, html {
     background-color: rgba(0, 255, 0, 0.2);
 }
 
-.bg-warning {
+/* .bg-warning {
     width: 90%;
-}
+} */
 
 .text-warning {
     height: 20px;
@@ -45,9 +45,9 @@ body, html {
     background-color: rgba(255, 255, 0, 0.2);
 }
 
-.bg-error {
+/* .bg-error {
     width: 90%;
-}
+} */
 
 .text-error {
     height: 20px;
