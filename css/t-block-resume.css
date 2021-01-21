@@ -1,0 +1,16 @@
+
+body {
+    font-family: 'Anton', sans-serif;
+    background-color: #F0F0F0;
+}
+
+p {
+    font-family: 'Abel', sans-serif;
+}
+
+.top-hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 5px solid rgb(154, 170, 123);
+}
+
