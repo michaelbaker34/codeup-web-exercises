@@ -8,9 +8,40 @@ p {
     font-family: 'Abel', sans-serif;
 }
 
-.top-hr {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-bottom: 5px solid rgb(154, 170, 123);
+.top-border {
+    margin-top: 5px !important;
+    margin-bottom: 30px !important;
+    border-bottom: 5px solid #e6563b !important;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+}
+
+.main-title {
+    color: #00aba9;
+    margin-bottom: 10px !important;;
+}
+
+.space-between {
+    margin-bottom: 20px;
+}
+
+.fa-envelope {
+    padding-right: 5px;
+}
+
+.fa-github-square {
+    padding-right: 5px;
+}
+
+.fa-linkedin {
+    padding-right: 5px;
+}
+
+.main-p {
+    color: black;
+    font-weight: 500;
 }
 
