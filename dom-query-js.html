@@ -48,6 +48,8 @@
             listItems[i].style.color = "grey";
         }
 
+        // document.querySelector("li[data-dbid = '1']").style.color = "blue";
+
         // TODO: Set text color of li with dbid = 1 to blue
         var dbid1 = listItems[0];
 
@@ -57,7 +59,7 @@
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished";
+        subParagraphs[0].textContent = "Mission Accomplished";
 
     })();
 
