@@ -33,13 +33,13 @@
 <script>
     (function() {
         "use strict";
-        var listener = (event) => alert("getting cooler");
+
         var listener2 = (event) => alert("click THE COOL BUTTON to tell everyone how cool you are!")
         var listener3 = (event) => alert("that's not cool...")
 
         // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById("main-header");
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+<<<<<<< Updated upstream
         var btn1 = document.getElementById("btn1").addEventListener("click", function() {
             alert
         });
@@ -49,6 +49,18 @@
             mainHeader = mainHeader.innerHTML = "JavaScript is Cool"
             alert("")
         }
+=======
+        var mainHeader = document.getElementById("main-header");
+        
+        var btn1 = function() {
+            document.getElementById("btn1").addEventListener("click", changeHeader)
+        };
+
+        var changeHeader = function() {
+            alert("getting cooler");
+            mainHeader = mainHeader.innerHTML = "JavaScript is Cool";
+        };
+>>>>>>> Stashed changes
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
