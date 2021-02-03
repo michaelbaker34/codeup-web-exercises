@@ -1,18 +1,24 @@
 "use strict";
 
-/* alerts */
+
 // $(document).ready(() => alert("Dom Loaded"));
 // let mainHeadHtml = $("#main-head").html();
 // alert(mainHeadHtml);
 // let paragraphHtml = $("#paragraph").html();
 // alert(paragraphHtml);
 
-/* css borders */
 // let codeupListItem = $(".codeup").css("border", "1px solid #f00")
 
-$("li").css("font-size", "20px");
+// $("li").css("font-size", "20px");
 
-$("h1, p, li").css("background-color", "#00FFFF")
+// $("h1, p, li").css("background-color", "#00FFFF")
 
-let headEl = $("h1").html("text");
-alert(headEl);
+// let headEl = $("h1").html();
+// alert(headEl);
+
+(function() {
+    let head = $("#main-head").html;
+    let handler = () => head.css("background-color", "lightblue");
+
+    head.click(handler);
+})
