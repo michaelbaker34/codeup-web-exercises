@@ -1,6 +1,5 @@
 "use strict";
 
-
 // $(document).ready(() => alert("Dom Loaded"));
 // let mainHeadHtml = $("#main-head").html();
 // alert(mainHeadHtml);
@@ -16,9 +15,18 @@
 // let headEl = $("h1").html();
 // alert(headEl);
 
-(function() {
-    let head = $("#main-head").html;
-    let handler = () => head.css("background-color", "lightblue");
-
+(function(){
+    let head = $("#main-head");
+    let handler = function(e) {
+        $(this).css("background-color", "lightblue");
+    }
     head.click(handler);
-})
+})()
+
+// (function() {
+//     let para = $("#paragraph");
+//     let handler = function(e) {
+//         $(this).css("fontSize", "18px");
+//     }
+//     para.click(handler);
+// })()
