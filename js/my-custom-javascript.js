@@ -14,5 +14,5 @@ $("li").css("font-size", "20px");
 
 $("h1, p, li").css("background-color", "#00FFFF")
 
-let headEl = $("h1").text();
+let headEl = $("h1").html("text");
 alert(headEl);
