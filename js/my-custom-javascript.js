@@ -15,18 +15,18 @@
 // let headEl = $("h1").html();
 // alert(headEl);
 
-(function(){
-    let head = $("#main-head");
-    let handler = function(e) {
-        $(this).css("background-color", "lightblue");
-    }
-    head.click(handler);
-})()
-
-// (function() {
-//     let para = $("#paragraph");
+// (function(){
+//     let head = $("#main-head");
 //     let handler = function(e) {
-//         $(this).css("fontSize", "18px");
+//         $(this).css("background-color", "lightblue");
 //     }
-//     para.click(handler);
+//     head.click(handler);
 // })()
+
+(function() {
+    let para = $("p");
+    let handler = function() {
+        $(this).css("font-size", "18px");
+    }
+    para.click(handler);
+})()
