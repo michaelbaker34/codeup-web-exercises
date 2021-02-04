@@ -40,8 +40,16 @@
     let para = $("p");
     let handler2 = function(e) {
         $(this).css("font-size", "18px");
-    }
+    };
     para.click(handler2);
 
-    let 
+    let list = $("li");
+    let handler3 = function(e) {
+        $(this).css("color", "red");
+    };
+    let handler4 = function(e) { 
+        $(this).css("color", "black");
+    };
+    list.hover(handler3, handler4);
+
 })();
