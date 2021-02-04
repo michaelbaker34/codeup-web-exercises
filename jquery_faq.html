@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="css/jquery_faq.css">
 </head>
 <body>
-    <div class="container">
+
+<!-- FAQs from https://www.nps.gov/aboutus/faqs.htm -->
+    <div class="faqContainer"> 
         <dl>
-        <!-- FAQs from https://www.nps.gov/aboutus/faqs.htm -->
         <!-- qa0 -->
             <dt>Who is the director of the National Park Service?</dt>
             <dd class="invisible">Shawn Benge, Deputy Director of Operations</dd>
@@ -51,9 +52,46 @@
             <dd class="invisible">$2.932 billion in fiscal year 2017</dd>
         </dl>
     </div>
+
+<!-- show/hide answers button -->
     <div class="showAnswers">
-        <input class="answerButton" type="submit" value="Show/Hide Answers">
+        <input class="button answerButton" type="submit" value="Show/Hide Answers">
     </div>
+
+<!-- fact list -->
+    <div class="listContainer">
+    <!-- park1 https://www.doi.gov/blog/10-things-you-didnt-know-about-wrangell-st-elias-national-park-preserve -->
+        <h3 class="factTitle">Wrangell-St. Elias National Park</h3>
+        <ul>
+            <li>Largest national park in the United States.</li>
+            <li>Largest glaciers in North America.</li>
+            <li>Resources in the park contributed to Allied victory in World War I.</li>
+            <li>Only two public roadways in the entire park.</li>
+        </ul>
+
+    <!-- park2 https://www.doi.gov/blog/12-things-you-didnt-know-about-death-valley -->
+        <h3 class="factTitle">Death Valley National Park</h3>
+        <ul>
+            <li>Lowest point in North America.</li>
+            <li>Temperatures of up to 127 degrees fahrenheit</li>
+            <li>Large rocks can move on their own for hundreds of feet.</li>
+            <li>Home to the Roadrunner.</li>
+        </ul>
+
+    <!-- park3 https://www.doi.gov/blog/7-things-you-didnt-know-about-yellowstone-national-park-->
+        <h3 class="factTitle">Yellowstone National Park</h3>
+        <ul>
+            <li>Half the world’s hydrothermal features are found at Yellowstone.</li>
+            <li>Bison roam everywhere including roadways.</li>
+            <li>Yellowstone’s history dates back 11,000 years.</li>
+            <li>One of the worlds largest active supervolcanoes. </li>
+        </ul>
+    </div>
+<!-- highlight button -->
+    <div class="highlightLast">
+        <input class="button highlightButton" type="submit" value="Highlight Last List Item">
+    </div>
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="js/jquery_faqs.js"></script>
 </body>

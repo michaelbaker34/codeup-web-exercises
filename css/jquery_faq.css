@@ -1,6 +1,7 @@
 
-.container {
+.faqContainer {
     border: 1px solid darkgreen;
+    padding: 0px 15px;
 }
 
 .invisible {
@@ -10,3 +11,22 @@
 .highlight {
     background-color: yellow;
 }
+
+dd {
+    padding: 5px 0px;
+}
+
+dt {
+    padding-top: 10px;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px;
+}
+
+.listContainer {
+    border: 1px solid darkblue;
+    padding: 0px 15px;
+}
+
