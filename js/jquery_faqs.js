@@ -28,3 +28,13 @@
             $(this).children().last().addClass("highlight");
         });
     });
+
+// bold li when h3 clicked
+    $("h3").click(function() {
+        $(this).next().children().addClass("makeBold");
+    });
+
+// when li clicked make first li blue
+    $("li").click(function() {
+        $(this).parent().children().first().addClass("makeBlue");
+    });
