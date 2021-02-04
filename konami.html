@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konami Code</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        "use strict";
+        // $(document).keyup(function(event){
+        //     console.log(event.keyCode);
+        // });
+        
+        let konamiCheat = function() {
+            let cheatCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+            let count = 0;
+            let start = false;
+            
+            $(document).keydown(function(e) {
+                let reset = function() {
+                    count = 0;
+                    start = false;
+                };
+                
+                let input = e.keyCode;
+                console.log(input);
+
+                if(!start) {
+                    if(input === 38) {
+                        start = true;
+                    }
+                }
+
+                if (start) {
+                    if (cheatCode[count] === input) {
+                        count += 1;
+                    } else {
+                        reset();
+                    }
+                    if (count === 11) {
+                        alert("30 Lives added");
+                        reset();
+                    } else {
+                        reset();
+                    }
+                }
+            });
+        }
+        konamiCheat();
+        
+    </script>
+</body>
+</html>

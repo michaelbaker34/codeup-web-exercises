@@ -16,17 +16,32 @@
 // alert(headEl);
 
 // (function(){
-//     let head = $("#main-head");
+//     let head = $("h1");
 //     let handler = function(e) {
 //         $(this).css("background-color", "lightblue");
 //     }
 //     head.click(handler);
-// })()
+// })();
+// (function() {
+//     let para = $("p");
+//     let handler1 = function(e) {
+//         $(this).css("font-size", "18px");
+//     }
+//     para.click(handler1);
+// })();
 
-(function() {
+(function(){
+    let head = $("h1");
+    let handler = function(e) {
+        $(this).css("background-color", "lightblue");
+    }
+    head.click(handler);
+
     let para = $("p");
-    let handler = function() {
+    let handler2 = function(e) {
         $(this).css("font-size", "18px");
     }
-    para.click(handler);
-})()
+    para.click(handler2);
+
+    let 
+})();
