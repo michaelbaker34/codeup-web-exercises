@@ -16,16 +16,16 @@
         // });
         
         // https://snipplr.com/view/15785/jquery-konami-code-listener
-        // if (window.addEventListener) {
-        //     let input = [];
-        //     let konami = "38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13";
-        //     window.addEventListener("keydown", function(e) {
-        //         input.push(e.keycode);
-        //         if (input.toString().indexOf(konami) >= 0) {
-        //             alert("30 Lives Added")
-        //         }
-        //     }, true);
-        // }
+        if (window.addEventListener) {
+            let input = [];
+            let konami = "38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13";
+            window.addEventListener("keydown", function(e) {
+                input.push(e.keycode);
+                if (input.toString().indexOf(konami) >= 0) {
+                    alert("30 Lives Added")
+                }
+            }, true);
+        }
         
     </script>
 </body>
