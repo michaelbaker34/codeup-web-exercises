@@ -35,11 +35,24 @@
 //             its contents and fields
 //       HINT: You will want to target #insertProducts for your new HTML elements
     function handleResponse(inventory) {
-        console.log(inventory.title);
+        console.log(inventory);
+        let html = "";
+
+        inventory.forEach(function(obj) {
+            let objHtml = '<tr>';
+            objHtml += '<td>' + obj.title + '</td>';
+            objHtml += '<td>' + obj.quantity + '</td>';
+            objHtml += '<td>' + obj.price + '</td>';
+            objHtml += '<td>' + obj.categories + '</td>';
+            objHtml += '</tr>';
+            html += objHtml;
+
+            console.log(objHtml);
+        });
+        $("#insertProducts").html(html);
     }
-
 })();
-</script>
 
+</script>
 </body>
 </html>
