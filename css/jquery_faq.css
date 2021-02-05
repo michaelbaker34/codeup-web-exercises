@@ -12,12 +12,9 @@
     background-color: yellow;
 }
 
-dd {
-    padding: 5px 0px;
-}
-
-dt {
-    padding-top: 10px;
+h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .button {
@@ -36,4 +33,8 @@ dt {
 
 .makeBlue {
     color: blue;
+}
+
+.factList {
+    display: none;
 }

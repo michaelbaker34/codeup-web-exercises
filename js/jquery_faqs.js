@@ -38,3 +38,13 @@
     $("li").click(function() {
         $(this).parent().children().first().addClass("makeBlue");
     });
+
+// hide h1 when x clicked
+    $(".closeButton").click(function() {
+        $(".newsletter").slideUp();
+    });
+
+// show factList when h3 clicked
+    $(".factTitle").click(function() {
+        $(this).next().slideToggle();
+    });

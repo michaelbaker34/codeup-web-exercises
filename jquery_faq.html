@@ -8,47 +8,55 @@
 </head>
 <body>
 
+    <div class="newsletter">
+        <h1>Would you like to sign up for our newsletter?<span><input class="closeButton" type="submit" value="x"></span></h1>
+    </div>
+
+    <div class="popup">
+        <h2>Register for our site?</h2>
+    </div>
+
 <!-- FAQs from https://www.nps.gov/aboutus/faqs.htm -->
     <div class="faqContainer"> 
         <dl>
         <!-- qa0 -->
-            <dt>Who is the director of the National Park Service?</dt>
+            <dt><h4>Who is the director of the National Park Service?</h4></dt>
             <dd class="invisible">Shawn Benge, Deputy Director of Operations</dd>
 
         <!-- qa1 -->
-            <dt>What government agency oversees the National Park Service?</dt>
+            <dt><h4>What government agency oversees the National Park Service?</h4></dt>
             <dd class="invisible">The National Park Service is a bureau of the Department of the Interior.</dd>
 
         <!-- qa2 -->
-            <dt>How many areas are in the National Park System?</dt>
+            <dt><h4>How many areas are in the National Park System?</h4></dt>
             <dd class="invisible">423 areas covering more than 85 million acres</dd>
         
         <!-- qa3 -->
-            <dt>What is the largest national park site?</dt>
+            <dt><h4>What is the largest national park site?</h4></dt>
             <dd class="invisible">Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
         
         <!-- qa4 -->
-            <dt>What is the smallest national park site?</dt>
+            <dt><h4>What is the smallest national park site?</h4></dt>
             <dd class="invisible">Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
 
         <!-- qa5 -->
-            <dt>How many people visit the national parks?</dt>
+            <dt><h4>How many people visit the national parks?</h4></dt>
             <dd class="invisible">Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
 
         <!-- qa6 -->
-            <dt>How many employees are in the National Park Service?</dt>
+            <dt><h4>How many employees are in the National Park Service?</h4></dt>
             <dd class="invisible">Approximately 20,000</dd>
 
         <!-- qa7 -->
-            <dt>How old is the National Park System?</dt>
+            <dt><h4>How old is the National Park System?</h4></dt>
             <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
 
         <!-- qa8 -->
-            <dt>What is the origin of the National Park Service arrowhead?</dt>
+            <dt><h4>What is the origin of the National Park Service arrowhead?</h3></dt>
             <dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior</dd>
 
         <!-- qa9 -->
-            <dt>What is the National Park Service budget?</dt>
+            <dt><h4>What is the National Park Service budget?</h4></dt>
             <dd class="invisible">$2.932 billion in fiscal year 2017</dd>
         </dl>
     </div>
@@ -61,17 +69,17 @@
 <!-- fact list -->
     <div class="listContainer">
     <!-- park1 https://www.doi.gov/blog/10-things-you-didnt-know-about-wrangell-st-elias-national-park-preserve -->
-        <h3 class="factTitle">Wrangell-St. Elias National Park</h3>
-        <ul>
-            <li>Largest national park in the United States.</li>
-            <li>Largest glaciers in North America.</li>
-            <li>Resources in the park contributed to Allied victory in World War I.</li>
-            <li>Only two public roadways in the entire park.</li>
-        </ul>
+            <h3 class="factTitle">Wrangell-St. Elias National Park</h3>
+            <ul class="factList">
+                <li>Largest national park in the United States.</li>
+                <li>Largest glaciers in North America.</li>
+                <li>Resources in the park contributed to Allied victory in World War I.</li>
+                <li>Only two public roadways in the entire park.</li>
+            </ul>
 
     <!-- park2 https://www.doi.gov/blog/12-things-you-didnt-know-about-death-valley -->
         <h3 class="factTitle">Death Valley National Park</h3>
-        <ul>
+        <ul class="factList">
             <li>Lowest point in North America.</li>
             <li>Temperatures of up to 127 degrees fahrenheit</li>
             <li>Large rocks can move on their own for hundreds of feet.</li>
@@ -80,19 +88,20 @@
 
     <!-- park3 https://www.doi.gov/blog/7-things-you-didnt-know-about-yellowstone-national-park-->
         <h3 class="factTitle">Yellowstone National Park</h3>
-        <ul>
+        <ul class="factList">
             <li>Half the world’s hydrothermal features are found at Yellowstone.</li>
             <li>Bison roam everywhere including roadways.</li>
             <li>Yellowstone’s history dates back 11,000 years.</li>
             <li>One of the worlds largest active supervolcanoes. </li>
         </ul>
     </div>
+
 <!-- highlight button -->
     <div class="highlightLast">
         <input class="button highlightButton" type="submit" value="Highlight Last List Item">
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="js/jquery_faqs.js"></script>
 </body>
 </html>
