@@ -32,55 +32,48 @@
 (function() {
     "use strict";
 // TODO: Create an AJAX GET request for the file under data/inventory.json
-//     let getInventory = $.get("data/inventory.json").done(handleResponse);
+    $.get("data/inventory.json").done(handleResponse);
+
 // TODO: Take the data from inventory.json and append it to the products table
 //       HINT: Your data should come back as a JSON object; use console.log() to inspect
 //             its contents and fields
 //       HINT: You will want to target #insertProducts for your new HTML elements
-//     function handleResponse(inventory) {
-//         console.log(inventory);
-//         let html = "";
-//
-//         inventory.forEach(function(obj) {
-//             let objHtml = '<tr>';
-//             objHtml += '<td>' + obj.title + '</td>';
-//             objHtml += '<td>' + obj.quantity + '</td>';
-//             objHtml += '<td>' + obj.price + '</td>';
-//             objHtml += '<td>' + obj.categories + '</td>';
-//             objHtml += '</tr>';
-//             html += objHtml;
-//
-//             console.log(objHtml);
-//         });
-//         $("#insertProducts").html(html);
-//     }
-
-    function renderTBody(items) {
-        items.forEach(function (item) {
-            // create table body
-            let $tbody = $("#insertProducts");
-            let $row = $("<tr>");
-            let $tdTitle = $("<td>").text(item.title);
-            let $tdQuantity = $("<td>").text(item.quantity);
-            let $tdPrice = $("<td>").text(item.price);
-            let $tdCategory = $("<td>").text(item.categories);
-
-            $tbody.append([$row, $tdTitle, $tdQuantity, $tdPrice, $tdCategory]);
+    function handleResponse(inventory) {
+        console.log(inventory);
+        let html = "";
+        inventory.forEach(function(obj) {
+            let objHtml = '<tr>';
+            objHtml += '<td>' + obj.title + '</td>';
+            objHtml += '<td>' + obj.quantity + '</td>';
+            objHtml += '<td>' + obj.price + '</td>';
+            objHtml += '<td>' + obj.categories + '</td>';
+            objHtml += '</tr>';
+            html += objHtml;
         });
+        $("#insertProducts").html(html);
     }
 
-    function handleResponse(items) {
-        renderTBody(items);
-    }
+    $("#refresh-table").click(function () {
+        $.get("data/inventory.json").done(handleResponse);
+    })
 
-    $.get("data/inventory.json").done(handleResponse);
+    // function renderTBody() {
+    //     $.get("data/inventory.json").done(function (items) {
+    //         items.forEach(function (item) {
+    //             // create table body for each object
+    //             let $tbody = $("#insertProducts");
+    //             let $row = $("<tr>");
+    //             let $tdTitle = $("<td>").text(item.title);
+    //             let $tdQuantity = $("<td>").text(item.quantity);
+    //             let $tdPrice = $("<td>").text(item.price);
+    //             let $tdCategory = $("<td>").text(item.categories);
+    //
+    //             $tbody.append([$row, $tdTitle, $tdQuantity, $tdPrice, $tdCategory]);
+    //         });
+    //     });
+    // }
+    // renderTBody();
 
-// refresh button function
-// $(function() {
-//     $("#refresh-table").click(function () {
-//         getInventory
-//     })
-// });
 })();
 
 </script>
