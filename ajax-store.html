@@ -38,6 +38,8 @@
 //       HINT: Your data should come back as a JSON object; use console.log() to inspect
 //             its contents and fields
 //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    // render table contents
     function handleResponse(inventory) {
         console.log(inventory);
         let html = "";
@@ -53,15 +55,16 @@
         $("#insertProducts").html(html);
     }
 
+    refresh button
     $("#refresh-table").click(function () {
         $.get("data/inventory.json").done(handleResponse);
     })
 
-    // function renderTBody() {
-    //     $.get("data/inventory.json").done(function (items) {
-    //         items.forEach(function (item) {
+    // refactored render table contents. non-working refresh
+    // function renderTBody(items) {
+    //     let $tbody = $("#insertProducts");
+    //     items.forEach(function (item) {
     //             // create table body for each object
-    //             let $tbody = $("#insertProducts");
     //             let $row = $("<tr>");
     //             let $tdTitle = $("<td>").text(item.title);
     //             let $tdQuantity = $("<td>").text(item.quantity);
@@ -70,9 +73,12 @@
     //
     //             $tbody.append([$row, $tdTitle, $tdQuantity, $tdPrice, $tdCategory]);
     //         });
-    //     });
-    // }
-    // renderTBody();
+    //     }
+    //
+    // $.get("data/inventory.json").done(renderTBody)
+    // $("#refresh-table").click(function () {
+    //     $.get("data/inventory.json").done(renderTBody)
+    // });
 
 })();
 
