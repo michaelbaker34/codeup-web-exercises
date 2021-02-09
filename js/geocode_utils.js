@@ -1,6 +1,6 @@
 "use strict";
 
-mapboxgl.accessToken = mapboxToken;
+mapboxgl.accessToken = MAPBOX_TOKEN;
 
 function geocode(search, token) {
     let baseUrl = 'https://api.mapbox.com';

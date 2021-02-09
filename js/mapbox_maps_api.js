@@ -1,5 +1,5 @@
 "use strict";
-mapboxgl.accessToken = mapboxToken;
+mapboxgl.accessToken = MAPBOX_TOKEN;
 
 const vesuvioCoords = [11.548, 45.548];
 let vesuvioPopup = new mapboxgl.Popup().setHTML("<p id='vesuvio-desc'>" +
