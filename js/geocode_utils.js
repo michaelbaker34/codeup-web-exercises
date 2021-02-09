@@ -2,13 +2,6 @@
 
 mapboxgl.accessToken = mapboxToken;
 
-function renderMap() {
-    let map = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/mapbox/streets-v11",
-    });
-}
-
 function geocode(search, token) {
     let baseUrl = 'https://api.mapbox.com';
     let endPoint = '/geocoding/v5/mapbox.places/';
