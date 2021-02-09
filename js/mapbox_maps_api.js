@@ -14,13 +14,14 @@ let mellowPopup = new mapboxgl.Popup().setHTML("<p id='mellow-desc'>" +
 const pizzaMainCoords = [-74.016, 40.205];
 let pizzaMainPopup = new mapboxgl.Popup().setHTML("<p id='pizza-main-desc'>" +
     "<h6>Pizza On Main</h6> a delicious local pizzaria spot with delicious " +
-    "wraps, calzones, strombolis and even delivery to the beach!</p>");
+    "wraps, calzones, strombolis and even delivery to the beach! " +
+    "<br><em>812 Main St, Bradley Beach, NJ 07720</em></p>");
 
 let map = new mapboxgl.Map({
     container: "mapbox",
     style: "mapbox://styles/mapbox/streets-v11",
     center: [-45, 45],
-    zoom: 2
+    zoom: 1.5
 });
 
 function renderMap() {
@@ -29,6 +30,6 @@ function renderMap() {
     map.addControl(new mapboxgl.NavigationControl());
 }
 
-function markMap(targetMark, targetPopup) {
-    new mapboxgl.Marker().setLngLat(targetMark).setPopup(targetPopup).addTo(map);
+function markMap(targetCoords, targetPopup) {
+    new mapboxgl.Marker().setLngLat(targetCoords).setPopup(targetPopup).addTo(map);
 }
