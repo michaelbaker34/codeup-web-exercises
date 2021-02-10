@@ -5,15 +5,15 @@ let weatherMapUrl = "https://api.openweathermap.org/data/2.5/onecall?";
 let appId = "&appid=" + WEATHERMAP_TOKEN;
 let units = "&units=imperial";
 
-function handleResponse(places) {
+function handleResponse(locations) {
     let html = "";
-    places.forEach(function (place) {
-        let cityState = place.cityName + ", " + place.stateName;
+    locations.forEach(function (data) {
+        let cityState = data.cityName + ", " + data.stateName;
         let temp = "Temperature: 0";
         console.log(cityState);
         let placeHtml = '<div class="card-body">';
         placeHtml += '<div class="card-title">' + cityState + '</div>';
-        placeHtml += '<div class="card-body">' + temp + '</div>'
+        placeHtml += '<div class="card-body">Current Temp: ' + temp + '</div>'
         placeHtml += '</div>';
         html += placeHtml
     });
