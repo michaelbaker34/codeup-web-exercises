@@ -1,6 +1,6 @@
 "use strict;"
 
-let cityListUrl = "data/places.json";
+let placesUrl = "data/places.json";
 let weatherMapUrl = "https://api.openweathermap.org/data/2.5/onecall?";
 let appId = "&appid=" + WEATHERMAP_TOKEN;
 let units = "&units=imperial";
@@ -19,7 +19,7 @@ function handleResponse(places) {
     });
     $("#placesCards").html(html);
 }
-$.get(cityListUrl).done(handleResponse);
+$.get(placesUrl).done(handleResponse);
 
 // get san antonio temp based on coords
 // let temp = $.get(weatherMapUrl
