@@ -1,10 +1,27 @@
 "use strict;"
 
-$.get("http://api.openweathermap.org/data/2.5/weather", {
-    APPID: WEATHERMAP_TOKEN,
-    q: "San Antonio, Tx, US",
-    units: "imperial"
-}).done((data) => console.log(data));
+let lat = "lat=29.424";
+let lon = "&lon=-98.495";
+let units = "&units=imperial";
+let appId = "&appid=" + WEATHERMAP_TOKEN;
+let weatherUrl = $.get("http://api.openweathermap.org/data/2.5/onecall?" + lat + lon + units + appId);
+
+function handleWeatherResponse(data) {
+    console.log(data);
+    for (let i = 0; i < 5; i++) {
+        console.log("---day "       + i + "---");
+        console.log("day temp: "    + data.daily[i].temp.day);
+        console.log("night temp: "  + data.daily[i].temp.night);
+        console.log("weather: "     + data.daily[i].weather[0].description);
+        console.log("humidity: "    + data.daily[i].humidity);
+        console.log("uv index: "    + data.daily[i].uvi);
+        console.log("wind speed: "  + data.daily[i].wind_speed);
+    }
+}
+
+weatherUrl.done(handleWeatherResponse);
+
+console.log(geocode("san antonio, tx", MAPBOX_TOKEN));
 
 // renderHTML using locations.json
 // let weatherMapUrl = "https://api.openweathermap.org/data/2.5/onecall?";
@@ -22,7 +39,7 @@ $.get("http://api.openweathermap.org/data/2.5/weather", {
 //         placeHtml += '</div>';
 //         html += placeHtml
 //     });
-//     $("#placesCards").html(html);
+//     $("#locationCards").html(html);
 // }
 // function handleGetDone() {
 //     $.get(locationsUrl).done(handleResponse);
