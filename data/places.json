@@ -1,0 +1,18 @@
+[
+  {
+    "cityName": "San Antonio",
+    "stateName": "Texas",
+    "lat": "29.58",
+    "lon": "-98.39"
+  }, {
+    "cityName": "Bradley Beach",
+    "stateName": "New Jersey",
+    "lat": "40.2",
+    "lon": "-74.02"
+  }, {
+    "cityName": "Rincon",
+    "stateName": "California",
+    "lat": "33.33",
+    "lon": "-116.99"
+  }
+]

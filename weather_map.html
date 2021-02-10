@@ -8,10 +8,16 @@
     <title>Weather Map</title>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css">
     <link rel="stylesheet" href="css/weather_map.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
 </head>
 <body>
 
-    <div id="current-city"></div>
+    <div class="card" id="placesCards">
+        <div class="card-body" id="weather-card">
+            <h3 class="card-title" id="city-state">city, state</h3>
+            <h5 class="card-text" id="weather">weather</h5>
+        </div>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.js"></script>
