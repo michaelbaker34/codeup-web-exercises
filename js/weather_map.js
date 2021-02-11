@@ -1,10 +1,10 @@
 "use strict;"
 
-let lat = "lat=29.424";
-let lon = "&lon=-98.495";
-let units = "&units=imperial";
-let appId = "&appid=" + WEATHERMAP_TOKEN;
-let weatherUrl = $.get("http://api.openweathermap.org/data/2.5/onecall?" + lat + lon + units + appId);
+let lat = 29.424;
+let lon = -98.495;
+let units = "imperial";
+let appId = WEATHERMAP_TOKEN;
+let weatherUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${appId}`;
 
 function handleWeatherResponse(data) {
     console.log(data);
@@ -19,9 +19,9 @@ function handleWeatherResponse(data) {
     }
 }
 
-weatherUrl.done(handleWeatherResponse);
+$.get(weatherUrl).done(handleWeatherResponse);
 
-console.log(geocode("san antonio, tx", MAPBOX_TOKEN));
+// console.log(geocode("san antonio, tx", MAPBOX_TOKEN));
 
 // renderHTML using locations.json
 // let weatherMapUrl = "https://api.openweathermap.org/data/2.5/onecall?";
@@ -55,6 +55,3 @@ console.log(geocode("san antonio, tx", MAPBOX_TOKEN));
 //         console.log(data);
 //         console.log(data.current.temp);
 //     });
-// console.log(geocode("san antonio, texas 78247", MAPBOX_TOKEN));
-// console.log(geocode("bradley beach, new jersey 07720", MAPBOX_TOKEN));
-// console.log(geocode("rincon, california 92061", MAPBOX_TOKEN));
