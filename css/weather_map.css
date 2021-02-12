@@ -1,0 +1,44 @@
+
+.weather-card {
+    margin: 5px;
+    padding: 0px;
+    border: lightblue solid 3px;
+    border-radius: 5%;
+}
+
+.card-container {
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.location {
+    font-size: 30px;
+}
+
+.date {
+    font-size: 18px;
+}
+
+p {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding-left: 3px;
+}
+
+.jumbotron {
+    background-color: lightblue;
+    width: 100%;
+}
+
+.searchBox {
+    padding: 3px;
+}
+
+.card-title {
+    text-align: left;
+    padding: 3px 3px;
+}
