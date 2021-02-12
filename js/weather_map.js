@@ -2,16 +2,17 @@
 
 $(document).ready(function () {
 // global location/weather data
-let lat = 29.424;
-let lon = -98.495;
+let lat = 29.42;
+let lon = -98.49;
+let startLocation = [-98.49, 29.42];
 let units = "imperial";
 let weatherUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${WEATHERMAP_TOKEN}`;
+mapboxgl.accessToken = MAPBOX_TOKEN;
 
 // handle weatherUrl data
-function handleWeatherResponse(data) {
-    // console.log(data);
+function handleResponse(data) {
 // jumbotron
-    let location = "city, state";
+    let location = startLocation;
     location = $(".location").text(`Location: ${location}`);
 
 // for (first 5 data.daily objects)
@@ -55,46 +56,71 @@ function handleWeatherResponse(data) {
         $div.append([$h6Date, $pWeather, $pHumidity, $pUvIndex, $pWindSpeed, $pWindDir, $pDescription]);
         $div.appendTo($(".weather-content"));
     }
-}
-
-// handle mapUrl data
-function handleMapResponse() {
-mapboxgl.accessToken = MAPBOX_TOKEN;
+// create map
     let map = new mapboxgl.Map({
         container: "mapbox",
         style: "mapbox://styles/mapbox/outdoors-v11",
         center: [-98.495, 29.424],
         zoom: 8
-    })
+    });
+// create marker
+    let marker = new mapboxgl.Marker({
+        color: "blue",
+        draggable: true
+    });
+    marker.setLngLat(startLocation).addTo(map);
 
+// get coords when drag ends
+    function onDragEnd() {
+        let lonLat = marker.getLngLat();
+        console.log(lonLat);
+        return lonLat;
+    }
+    marker.on("dragend", onDragEnd);
+
+// render map
     function renderMap() {
         let mapboxDiv = $("#mapbox");
         mapboxDiv.append(map);
         map.addControl(new mapboxgl.NavigationControl());
     }
-    return renderMap()
-    console.log("map done");
-
-    let targetCoords = lat + lon;
-
-    function markMap(targetCoords) {
-        new mapboxgl.Marker().setLngLat(targetCoords).addTo(map);
-        return markMap(targetCoords);
-    }
+    return renderMap();
 }
+
+// // handle mapUrl data
+// function handleMapResponse() {
+// mapboxgl.accessToken = MAPBOX_TOKEN;
+//     let map = new mapboxgl.Map({
+//         container: "mapbox",
+//         style: "mapbox://styles/mapbox/outdoors-v11",
+//         center: [-98.495, 29.424],
+//         zoom: 8
+//     });
+//     let marker = new mapboxgl.Marker({
+//         color: "blue",
+//         draggable: true
+//     });
+//     marker.setLngLat(lonlat).addTo(map);
+//
+//     let coordinates = $("#coordinates");
+//     function onDragEnd() {
+//         let lonlat = marker.getLngLat();
+//         return coordinates.text(lonlat);
+//     }
+//     marker.on("dragend", onDragEnd);
+//
+//     function renderMap() {
+//         let mapboxDiv = $("#mapbox");
+//         mapboxDiv.append(map);
+//         map.addControl(new mapboxgl.NavigationControl());
+//     }
+//     return renderMap()
+// }
 
 // handle & call weather url handler function
 function handleGetDone() {
-    $.get(weatherUrl).done(handleWeatherResponse);
+    $.get(weatherUrl).done(handleResponse);
 }
 handleGetDone();
-handleMapResponse();
 
-// console.log(geocode("san antonio, tx", MAPBOX_TOKEN));
-// // get san antonio temp based on coords
-// let temp = $.get(weatherMapUrl + "lat=29.58" + "&lon=-98.39" + units + appId)
-//     .done(function (data) {
-//         console.log(data);
-//         console.log(data.current.temp);
-//     });
 });
