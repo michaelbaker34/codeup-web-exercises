@@ -1,25 +1,41 @@
+body {
+
+}
+
+#pageTitle {
+    font-size: 30px;
+    color: whitesmoke;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.search-box {
+    float: right;
+    padding-right: 5px;
+}
+
+.location {
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.weather-content {
+    padding-left: 5px;
+}
 
 .weather-card {
     margin: 5px;
     padding: 0px;
-    border: lightblue solid 3px;
-    border-radius: 5%;
-}
-
-.card-container {
-    justify-content: space-between;
-}
-
-.title {
-    font-size: 30px;
-}
-
-.location {
-    font-size: 30px;
+    border: skyblue 2px solid;
+    background-color: whitesmoke;
 }
 
 .date {
-    font-size: 18px;
+    font-size: 15px;
+}
+
+.card-header {
+    color: whitesmoke;
 }
 
 p {
@@ -29,16 +45,13 @@ p {
     padding-left: 3px;
 }
 
-.jumbotron {
-    background-color: lightblue;
-    width: 100%;
-}
-
-.searchBox {
-    padding: 3px;
-}
-
 .card-title {
-    text-align: left;
+    text-align: center;
     padding: 3px 3px;
+}
+
+.map-content {
+    width: 90%;
+    height: 300px;
+    padding: 10px;
 }

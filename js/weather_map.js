@@ -5,6 +5,7 @@ let lat = 29.424;
 let lon = -98.495;
 let units = "imperial";
 let weatherUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${WEATHERMAP_TOKEN}`;
+let token = mapboxgl.accessToken = MAPBOX_TOKEN;
 
 // handle weatherUrl data
 function handleWeatherResponse(data) {
@@ -25,6 +26,12 @@ function handleWeatherResponse(data) {
             let date = a.getDate() + i;
             return `${month} ${date}, ${year}`;
         }
+        // convert windDirection Degrees to windDirection Cardinal/Ordinal
+        let windDegrees = data.daily[i].wind_deg;
+        let windDir = function headingToCardinal (windDegrees) {
+            let tol = (windDegrees / 45);
+            let dir = ["N", "S", "E", "W", "NW", "NE", "SW", "SE"];
+        }
 // html variables
         let date = weatherMapTimeConverter(UNIX_timestamp);
         let dayTemp = Math.round(data.daily[i].temp.day);
@@ -33,20 +40,24 @@ function handleWeatherResponse(data) {
         let humidity = data.daily[i].humidity;
         let uvIndex = data.daily[i].uvi;
         let windSpeed = Math.round(data.daily[i].wind_speed);
-        let windDir = data.daily[i].wind_deg;
 // format html variables
-        let $div = $("<div>").addClass("col-2 card weather-card");
-        let $h6Date = $("<h6>").addClass("card-title card-header date").text(`Date: ${date}`);
+        let $div = $("<div>").addClass("col card weather-card border border-primary");
+        let $h6Date = $("<h6>").addClass("card-title card-header date bg-primary").text(`Date: ${date}`);
         let $pWeather = $("<p>").addClass("card-text weather").text(`Day: ${dayTemp}˚F Night: ${nightTemp}˚F`);
         let $pHumidity = $("<p>").addClass("card-text humidity").text(`Humidity: ${humidity}`);
         let $pUvIndex = $("<p>").addClass("card-text uvIndex").text(`UV Index: ${uvIndex}`);
         let $pWindSpeed = $("<p>").addClass("card-text windSpeed").text(`Wind Speed: ${windSpeed} kts`);
-        let $pWindDir = $("<p>").addClass("card-text windDir").text(`Wind Direction: ${windDir}˚`);
+        let $pWindDir = $("<p>").addClass("card-text windDir").text(`Wind Direction: ${windDegrees}˚ (${windDir()})`);
         let $pDescription = $("<p>").addClass("card-text description").text(`Description: ${description}`);
 // render html variables
         $div.append([$h6Date, $pWeather, $pHumidity, $pUvIndex, $pWindSpeed, $pWindDir, $pDescription]);
-        $div.appendTo($(".card-container"));
+        $div.appendTo($(".weather-content"));
     }
+}
+
+// hanlde mapUrl data
+function handleMapResponse() {
+    console.log("map done");
 }
 
 // handle & call weather url handler function
