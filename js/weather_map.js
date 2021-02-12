@@ -2,19 +2,12 @@
 
 $(document).ready(function () {
 // location/weather data variables
+    mapboxgl.accessToken = MAPBOX_TOKEN;
     let lat = 29.42;
     let lon = -98.49;
     let startLocation = [-98.49, 29.42];
     let units = "imperial";
     let weatherUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${WEATHERMAP_TOKEN}`;
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-
-// set coords from marker
-    function setCoords(position) {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        return [lat, lon];
-    }
 
 // handle weatherUrl data
     function handleResponse(data) {
@@ -61,6 +54,7 @@ $(document).ready(function () {
             $div.append([$h6Date, $pWeather, $pHumidity, $pUvIndex, $pWindSpeed, $pWindDir, $pDescription]);
             $div.appendTo($(".weather-content"));
         }
+
     // create map
         let map = new mapboxgl.Map({
             container: "mapbox",
@@ -74,6 +68,13 @@ $(document).ready(function () {
             draggable: true
         });
         marker.setLngLat(startLocation).addTo(map);
+
+    // set coords from marker
+        function setCoords(position) {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            return [lat, lon];
+        }
 
     // get coords ondragend
         function onDragEnd() {
@@ -91,6 +92,12 @@ $(document).ready(function () {
         }
         return renderMap();
     }
+    // get searchInput
+    $("#searchButton").click(function searchBoxInput() {
+        let searchInput = $("#searchLocationBox").val();
+        console.log(searchInput);
+        return searchInput;
+    })
 
 // handle & call weather url handler function
     function handleGetDone() {

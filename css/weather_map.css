@@ -11,11 +11,13 @@
 
 .search-box {
     float: right;
+    margin-top: 5px;
 }
 
 .location {
     font-size: 20px;
     padding-left: 5px;
+    margin-bottom: 0;
 }
 
 .weather-content {
