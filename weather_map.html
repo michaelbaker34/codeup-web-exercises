@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
-    <div class="weather-heading">
-        <div class="row jumbotron bg-primary">
-            <h1 class="title col-12" id="pageTitle">Weather App</h1>
-        </div>
+<div class="row jumbotron custom-jumbotron bg-primary">
+    <h1 class="title" id="pageTitle">Weather App</h1>
+</div>
+    <div class="weather-heading container">
             <h1 class="location d-inline-block"></h1>
         <div class="search-box bg-transparent d-inline">
             <label for="searchLocationBox"></label>
             <input class="btn btn-outline-dark btn-sm" id="searchButton" type="button" value="search">
             <input class="input input-sm" id="searchLocationBox" type="text" value="City, State">
         </div>
+        <div class="row bg-transparent weather-content"></div>
     </div>
-
-    <div class="row justify-content-evenly bg-transparent weather-content"></div>
 
     <div class="map-content">
         <div id="mapbox"></div>
