@@ -47,13 +47,13 @@ $(document).ready(function () {
             let windDir = headingToCardinal(windDegrees);
         // format html variables
             let $div = $("<div>").addClass("col card weather-card border border-primary");
-            let $h6Date = $("<h6>").addClass("card-title card-header date bg-primary").text(`Date: ${date}`);
-            let $pWeather = $("<p>").addClass("card-text weather").text(`Day: ${dayTemp}˚F Night: ${nightTemp}˚F`);
-            let $pHumidity = $("<p>").addClass("card-text humidity").text(`Humidity: ${humidity}`);
-            let $pUvIndex = $("<p>").addClass("card-text uvIndex").text(`UV Index: ${uvIndex}`);
-            let $pWindSpeed = $("<p>").addClass("card-text windSpeed").text(`Wind Speed: ${windSpeed} kts`);
-            let $pWindDir = $("<p>").addClass("card-text windDir").text(`Wind Direction: ${windDegrees}˚ (${windDir})`);
-            let $pDescription = $("<p>").addClass("card-text description").text(`Description: ${description}`);
+            let $h6Date = $("<h6>").addClass("card-title card-header date bg-primary").text(`Date: ${weatherMapTimeConverter(UNIX_timestamp)}`);
+            let $pWeather = $("<p>").addClass("card-text weather").text(`Day: ${Math.round(data.daily[i].temp.day)}˚F Night: ${Math.round(data.daily[i].temp.night)}˚F`);
+            let $pHumidity = $("<p>").addClass("card-text humidity").text(`Humidity: ${data.daily[i].humidity}`);
+            let $pUvIndex = $("<p>").addClass("card-text uvIndex").text(`UV Index: ${data.daily[i].uvi}`);
+            let $pWindSpeed = $("<p>").addClass("card-text windSpeed").text(`Wind Speed: ${Math.round(data.daily[i].wind_speed)} kts`);
+            let $pWindDir = $("<p>").addClass("card-text windDir").text(`Wind Direction: ${windDegrees}˚ (${headingToCardinal(windDegrees)})`);
+            let $pDescription = $("<p>").addClass("card-text description").text(`Description: ${data.daily[i].weather[0].description}`);
         // render html variables
             $div.append([$h6Date, $pWeather, $pHumidity, $pUvIndex, $pWindSpeed, $pWindDir, $pDescription]);
             $div.appendTo($(".weather-content"));
