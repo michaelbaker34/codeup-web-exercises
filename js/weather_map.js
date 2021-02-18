@@ -3,9 +3,13 @@
 $(document).ready(function () {
 // location/weather data variables
     mapboxgl.accessToken = MAPBOX_TOKEN;
+
+    /* replace below */
     let lat = 29.42;
     let lon = -98.49;
     let startLocation = [-98.49, 29.42];
+    /* replace above */
+
     let units = "imperial";
     let weatherUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${WEATHERMAP_TOKEN}`;
 
@@ -92,7 +96,8 @@ $(document).ready(function () {
         }
         return renderMap();
     }
-    // get searchInput
+
+// get searchInput
     $("#searchButton").click(function searchBoxInput() {
         let searchInput = $("#searchLocationBox").val();
         console.log(searchInput);
