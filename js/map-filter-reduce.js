@@ -43,25 +43,45 @@ const users = [
 *   each user object has 3 languages in array
 */
 
-let languages = users.filter(function (x) {
-   return x.languages > 3;
-});
+let languages = users.filter((x) => x.languages.length >= 3);
+console.log(languages);
 
 /* TODO
 *   use .map() create array of strings
 *   each element should be email address
 */
 
+let emails = users.map((x) => x.email);
+console.log(emails);
+
 /* TODO
 *   use .reduce() get total years exp from users
 *   calculate results of avg
  */
 
+let experience = users.reduce((total, x) => {
+    return (total + x.yearsOfExperience);
+}, 0);
+experience = experience / users.length;
+console.log(experience);
+
 /* TODO
 *   use .reduce() get longest email
  */
 
+let longestInstructorEmail = users.reduce((longestEmail, userEmail) =>
+    (userEmail.email.length > longestEmail.email.length) ? userEmail : longestEmail);
+console.log(longestInstructorEmail.email);
+
 /* TODO
-*   get list of user names in single string
-* ex: "Your instructors are: name, name, name.
+*   use .reduce() get list of user names in single string
+*   ex: "Your instructors are: name, name, name.
+ */
+
+let namesArray = users.reduce((a, user) => a.concat(user.name), []);
+let namesString = `Your instructors are: ${namesArray.join(", ")}`;
+console.log(namesString);
+
+/* TODO
+*   use .reduce() to get unique languages from user list
  */
