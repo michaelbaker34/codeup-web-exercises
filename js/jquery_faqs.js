@@ -1,4 +1,4 @@
-"use strict;"
+"use strict";
 
 // show/hide answers
     // let button = $(".answerButton");

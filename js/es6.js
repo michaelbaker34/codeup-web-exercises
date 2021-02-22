@@ -1,3 +1,5 @@
+"use-strict";
+
 /*
  * Complete the TODO items below
  */
