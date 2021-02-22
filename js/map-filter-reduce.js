@@ -43,6 +43,10 @@ const users = [
 *   each user object has 3 languages in array
 */
 
+let languages = users.filter(function (x) {
+   return x.languages > 3;
+});
+
 /* TODO
 *   use .map() create array of strings
 *   each element should be email address
