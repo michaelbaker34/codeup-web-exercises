@@ -86,5 +86,6 @@ const users = [
 /* TODO
 *   use .reduce() to get unique languages from user list
  */
+// put languages into array, flatten and return array
     // let uniqueLanguages = users.reduce((a, user) => { });
     // console.log(uniqueLanguages);
