@@ -6,5 +6,5 @@
     - MapBox
     - BootStrap
 ### Files
-  - js/geocode_utils.js
-  - js/weather_map.js
+    - js/geocode_utils.js
+    - js/weather_map.js
